@@ -1,0 +1,88 @@
+  <ng-template let-modal>
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Tipos de apoyo</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="modal.close('Cerrado desde la ventana')"> 
+            <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+      <div class="modal-body">
+        
+        <div>
+            <p>
+                La universidad le presenta los tipos de apoyo sugeridos, por favor seleccione la opción más acorde a sus necesidades.
+            </p><br>
+            <p>Apoyo de accesibilidad fisica:</p>
+            <input type="radio" id="apoyo_escaleras" name="accesibilidad" value="apoyo_escaleras">
+            <label for="apoyo_escaleras">Apoyo por dificultad en emplear escaleras</label><br>
+    
+            <input type="radio" id="no_apoyo_escaleras" name="accesibilidad" value="no_apoyo_escaleras">
+            <label for="no_apoyo_escaleras">No requiero apoyo de accesibilidad fisica</label><br><br>
+          </div>
+          
+          <div *ngIf="discapacidadSeleccionado == 'ciegas'">
+            <p>Apoyo de medio de lectura:</p>
+            <input type="radio" id="apoyo_audio" name="lectura" value="apoyo_audio">
+            <label for="apoyo_audio">Audio</label><br>
+    
+            <input type="radio" id="apoyo_braille" name="lectura" value="apoyo_braille">
+            <label for="apoyo_braille">Braille</label><br>
+    
+            <input type="radio" id="no_apoyo_lectura" name="lectura" value="no_apoyo_lectura">
+            <label for="no_apoyo_lectura">No requiero apoyo</label><br><br>
+          </div>
+    
+          <div *ngIf="discapacidadSeleccionado == 'baja_vision'">
+            <p>Apoyo de medio de lectura:</p>
+            <input type="radio" id="apoyo_audio" name="lectura" value="apoyo_audio">
+            <label for="apoyo_audio">Audio</label><br>
+    
+            <input type="radio" id="apoyo_braille" name="lectura" value="apoyo_braille">
+            <label for="apoyo_braille">Braille</label><br>
+    
+            <input type="radio" id="apoyo_macrotipo" name="lectura" value="apoyo_macrotipo">
+            <label for="apoyo_macrotipo">Macrotipo</label><br>
+    
+            <input type="radio" id="no_apoyo_lectura" name="lectura" value="no_apoyo_lectura">
+            <label for="no_apoyo_lectura">No requiero apoyo</label><br><br>
+          </div>
+    
+          <div *ngIf="discapacidadSeleccionado == 'ciegas'">
+            <p>Apoyo de medio de escritura:</p>
+            <input type="radio" id="apoyo_braille" name="escritura" value="apoyo_braille">
+            <label for="apoyo_braille">Braille</label><br>
+    
+            <input type="radio" id="no_apoyo_lectura" name="escritura" value="no_apoyo_lectura">
+            <label for="no_apoyo_lectura">No requiero apoyo</label><br><br>
+          </div>
+    
+          <div *ngIf="discapacidadSeleccionado == 'baja_vision'">
+            <p>Apoyo de medio de escritura:</p>
+            <input type="radio" id="apoyo_braille" name="escritura" value="apoyo_braille">
+            <label for="apoyo_braille">Braille</label><br>
+    
+            <input type="radio" id="apoyo_macrotipo" name="escritura" value="apoyo_macrotipo">
+            <label for="apoyo_macrotipo">Macrotipo</label><br>
+    
+            <input type="radio" id="no_apoyo_lectura" name="escritura" value="no_apoyo_lectura">
+            <label for="no_apoyo_lectura">No requiero apoyo</label><br><br>
+          </div>
+            
+          <div *ngIf="discapacidadSeleccionado == 'señante'">
+              <p>Apoyo de medio de comunicación:</p>
+              <input type="radio" id="apoyo_lsc" name="comunicacion" value="apoyo_lsc">
+              <label for="apoyo_lsc">Lenguaje de señas colombiana</label><br>
+    
+              <input type="radio" id="no_apoyo_comunicacion" name="comunicacion" value="no_apoyo_comunicacion">
+              <label for="no_apoyo_comunicacion">No requiero apoyo</label><br><br>
+          </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="modal.close('No')">Cancelar</button>
+        <button type="button" class="btn btn-primary" (click)="modal.close('Si')">Aceptar</button>
+      </div>
+    </div>
+  
+  </ng-template>
